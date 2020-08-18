@@ -1,0 +1,34 @@
+Package: epipredpreds
+Title: MHCnuggets Predictions
+Version: 0.2
+Authors@R: 
+    person(given = "Richel",
+           family = "Bilderbeek",
+           role = c("aut", "cre"),
+           email = "richel@richelbilderbeek.nl")
+Description:
+    'EpitopePrediction' predicts the IC50 value for
+    peptides for multiple MHC-I haplotypes.
+    This package contains pre-calculated prediction 
+    similar to look-up tables.
+    In this way, one can determine the IC50 value below which one
+    considers a peptide a binder.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
+Imports:
+    EpitopePrediction,
+    glue,
+    Peptides,
+    readr,
+    seqinr,
+    stringr,  
+    tibble
+Suggests:
+    devtools,
+    testit,
+    testthat (>= 2.1.0),
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
