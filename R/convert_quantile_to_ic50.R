@@ -6,7 +6,7 @@ convert_quantile_to_ic50 <- function(
   lut,
   q
 ) {
-  epipredpreds::convert_quantile_to_ic50_old(lut = lut, q = q)
+  epiprepreds::convert_quantile_to_ic50_old(lut = lut, q = q)
 }
 
 #' Convert a quantile to an IC50, olskool
@@ -49,5 +49,5 @@ convert_quantile_to_ic50_new <- function(
   lut,
   q
 ) {
-  epipredpreds::convert_quantile_to_ic50_old(lut = lut, q = q)
+  epiprepreds::convert_quantile_to_ic50_old(lut = lut, q = q)
 }

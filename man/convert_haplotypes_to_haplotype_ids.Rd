@@ -10,7 +10,7 @@ convert_haplotypes_to_haplotype_ids(haplotypes)
 \item{haplotypes}{one ore more EpitopePrediction haplotype IDs,
 for example \code{HLA-A33:01}.
 Use \link{get_haplotype_lut} to get a lookup table that maps
-a \code{epipredpreds} haplotype ID to an EpitopePrediction haplotype name}
+a \code{epiprepreds} haplotype ID to an EpitopePrediction haplotype name}
 }
 \description{
 Convert one or more haplotypes (in EpitopePrediction naming format)

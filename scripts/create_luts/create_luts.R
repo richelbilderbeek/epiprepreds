@@ -24,8 +24,9 @@ for (peptide_source in peptide_sources) {
   for (peptide_length in peptide_lengths) {
     for (haplotype_index in haplotype_indices) {
       cmds <- c(
-        "sbatch",
-        "../../../peregrine/scripts/run_r_script.sh",
+        #"sbatch",
+        #"../../../peregrine/scripts/run_r_script.sh",
+        "Rscript",
         "create_lut.R",
         peptide_source,
         peptide_length,

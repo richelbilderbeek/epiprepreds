@@ -7,10 +7,10 @@
 convert_haplotype_ids_to_haplotypes(haplotype_ids)
 }
 \arguments{
-\item{haplotype_ids}{one or more \code{epipredpreds} haplotype IDs,
+\item{haplotype_ids}{one or more \code{epiprepreds} haplotype IDs,
 for example \code{h1}.
 Use \link{get_haplotype_lut} to get a lookup table that maps
-a \code{epipredpreds} haplotype ID to an EpitopePrediction haplotype name}
+a \code{epiprepreds} haplotype ID to an EpitopePrediction haplotype name}
 }
 \description{
 Convert one or more haplotype IDs to haplotypes,

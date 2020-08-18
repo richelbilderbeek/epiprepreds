@@ -8,7 +8,7 @@ get_lut <- function(
   peptide_length,
   mhc_haplotype
 ) {
-  filename <- epipredpreds::get_lut_filename(
+  filename <- epiprepreds::get_lut_filename(
     peptide_length = peptide_length,
     mhc_haplotype = mhc_haplotype
   )

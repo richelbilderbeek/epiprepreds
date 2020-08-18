@@ -58,17 +58,17 @@ test_that("simulated peptides must be in LUT", {
   mhcnuggets_options <- mhcnuggetsr::create_mhcnuggets_options(mhc = haplotype)
   ic50s <- mhcnuggetsr::predict_ic50(mhcnuggets_options, peptides)
 
-  min_ic50 <- epipredpreds::get_ic50_threshold(
+  min_ic50 <- epiprepreds::get_ic50_threshold(
     peptide_length = peptide_length,
     mhc_haplotype = haplotype,
     percentile = 0.0
   )
-  mean_ic50 <- epipredpreds::get_ic50_threshold(
+  mean_ic50 <- epiprepreds::get_ic50_threshold(
     peptide_length = peptide_length,
     mhc_haplotype = haplotype,
     percentile = 0.5
   )
-  max_ic50 <- epipredpreds::get_ic50_threshold(
+  max_ic50 <- epiprepreds::get_ic50_threshold(
     peptide_length = peptide_length,
     mhc_haplotype = haplotype,
     percentile = 1.0

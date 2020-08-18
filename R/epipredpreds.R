@@ -1,4 +1,4 @@
-#' epipredpreds: Lookup tables for EpitopePrediction IC50 predictions
+#' epiprepreds: Lookup tables for EpitopePrediction IC50 predictions
 #'
 #' We can predict how well a peptide binds to the presentation molecules
 #' used by the immune system. This package allows to see how well a
@@ -30,6 +30,6 @@
 #' }
 #' @author Richèl J.C. Bilderbeek
 #' @docType package
-#' @name epipredpreds
+#' @name epiprepreds
 #'
 NULL

@@ -13,9 +13,9 @@ get_ic50_threshold <- function(
   mhc_haplotype,
   percentile = 0.02
 ) {
-  lut <- epipredpreds::get_lut(
+  lut <- epiprepreds::get_lut(
     peptide_length = peptide_length,
     mhc_haplotype = mhc_haplotype
   )
-  epipredpreds::convert_quantile_to_ic50(lut = lut, q = percentile)
+  epiprepreds::convert_quantile_to_ic50(lut = lut, q = percentile)
 }

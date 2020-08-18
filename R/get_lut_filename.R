@@ -8,7 +8,7 @@ get_lut_filename <- function(
   peptide_length,
   mhc_haplotype
 ) {
-  haplotype_lut <- epipredpreds::get_haplotype_lut()
+  haplotype_lut <- epiprepreds::get_haplotype_lut()
 
   if (!mhc_haplotype %in% haplotype_lut$haplotype) {
     stop(
@@ -18,7 +18,7 @@ get_lut_filename <- function(
   }
   haplotype_id <- haplotype_lut$id[mhc_haplotype == haplotype_lut$haplotype]
   filename <- paste0("random_", haplotype_id, "_", peptide_length, ".csv")
-  full <- system.file("extdata", filename, package = "epipredpreds")
+  full <- system.file("extdata", filename, package = "epiprepreds")
   if (!file.exists(full)) {
     stop(
       glue::glue(

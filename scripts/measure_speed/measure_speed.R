@@ -1,4 +1,4 @@
-library(epipredpreds, warn.conflicts = FALSE)
+library(epiprepreds, warn.conflicts = FALSE)
 library(lubridate, warn.conflicts = FALSE)
 
 haplotypes <- c(
@@ -21,7 +21,7 @@ run_interval <- lubridate::interval(
 i <- 1
 for (haplotype in haplotypes) {
   for (peptide_length in peptide_lengths) {
-    ic50_threshold <- epipredpreds::get_ic50_threshold(
+    ic50_threshold <- epiprepreds::get_ic50_threshold(
       peptide_length = peptide_length,
       mhc_haplotype = haplotype
     )

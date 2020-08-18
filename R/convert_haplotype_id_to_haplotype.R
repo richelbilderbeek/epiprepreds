@@ -10,7 +10,7 @@
 convert_haplotype_id_to_haplotype <- function(#nolint indeed a long function name
   haplotype_id
 ) {
-  lut <- epipredpreds::get_haplotype_lut()
+  lut <- epiprepreds::get_haplotype_lut()
   if (!haplotype_id %in% lut$id) {
     stop(
       "Invalid 'haplotype_id'. \n",

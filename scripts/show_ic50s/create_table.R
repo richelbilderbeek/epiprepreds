@@ -1,4 +1,4 @@
-library(epipredpreds)
+library(epiprepreds)
 
 haplotypes <- c(
   mhcnuggetsr::get_mhc_1_haplotypes(),
@@ -20,13 +20,13 @@ t <- tibble::tibble(
 for (i in seq_len(nrow(t))) {
   message(i)
   haplotype <- t$haplotype[i]
-  t$p0[i] <- epipredpreds::get_ic50_threshold(mhc_haplotype = haplotype, percentile = 0.00)
-  t$p1[i] <- epipredpreds::get_ic50_threshold(mhc_haplotype = haplotype, percentile = 0.01)
-  t$p5[i] <- epipredpreds::get_ic50_threshold(mhc_haplotype = haplotype, percentile = 0.05)
-  t$p50[i] <- epipredpreds::get_ic50_threshold(mhc_haplotype = haplotype, percentile = 0.50)
-  t$p95[i] <- epipredpreds::get_ic50_threshold(mhc_haplotype = haplotype, percentile = 0.95)
-  t$p99[i] <- epipredpreds::get_ic50_threshold(mhc_haplotype = haplotype, percentile = 0.99)
-  t$p100[i] <- epipredpreds::get_ic50_threshold(mhc_haplotype = haplotype, percentile = 1.0)
+  t$p0[i] <- epiprepreds::get_ic50_threshold(mhc_haplotype = haplotype, percentile = 0.00)
+  t$p1[i] <- epiprepreds::get_ic50_threshold(mhc_haplotype = haplotype, percentile = 0.01)
+  t$p5[i] <- epiprepreds::get_ic50_threshold(mhc_haplotype = haplotype, percentile = 0.05)
+  t$p50[i] <- epiprepreds::get_ic50_threshold(mhc_haplotype = haplotype, percentile = 0.50)
+  t$p95[i] <- epiprepreds::get_ic50_threshold(mhc_haplotype = haplotype, percentile = 0.95)
+  t$p99[i] <- epiprepreds::get_ic50_threshold(mhc_haplotype = haplotype, percentile = 0.99)
+  t$p100[i] <- epiprepreds::get_ic50_threshold(mhc_haplotype = haplotype, percentile = 1.0)
 }
 
 readr::write_csv(t, "ic50s.csv")

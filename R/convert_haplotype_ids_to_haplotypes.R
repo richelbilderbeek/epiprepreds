@@ -12,7 +12,7 @@ convert_haplotype_ids_to_haplotypes <- function(#nolint indeed a long function n
 ) {
   haplotypes <- rep(NA, length(haplotype_ids))
   for (i in seq_along(haplotypes)) {
-    haplotypes[i] <- epipredpreds::convert_haplotype_id_to_haplotype(
+    haplotypes[i] <- epiprepreds::convert_haplotype_id_to_haplotype(
       haplotype_ids[i]
     )
   }

@@ -7,19 +7,19 @@
 #' @param haplotype the EpitopePrediction haplotype ID,
 #' for example \code{HLA-A33:01}.
 #' Use \link{get_haplotype_lut} to get a lookup table that maps
-#' a \code{epipredpreds} haplotype ID to an EpitopePrediction haplotype name
+#' a \code{epiprepreds} haplotype ID to an EpitopePrediction haplotype name
 #' @param haplotypes one ore more EpitopePrediction haplotype IDs,
 #' for example \code{HLA-A33:01}.
 #' Use \link{get_haplotype_lut} to get a lookup table that maps
-#' a \code{epipredpreds} haplotype ID to an EpitopePrediction haplotype name
-#' @param haplotype_id the \code{epipredpreds} haplotype ID,
+#' a \code{epiprepreds} haplotype ID to an EpitopePrediction haplotype name
+#' @param haplotype_id the \code{epiprepreds} haplotype ID,
 #' for example \code{h1}.
 #' Use \link{get_haplotype_lut} to get a lookup table that maps
-#' a \code{epipredpreds} haplotype ID to an EpitopePrediction haplotype name
-#' @param haplotype_ids one or more \code{epipredpreds} haplotype IDs,
+#' a \code{epiprepreds} haplotype ID to an EpitopePrediction haplotype name
+#' @param haplotype_ids one or more \code{epiprepreds} haplotype IDs,
 #' for example \code{h1}.
 #' Use \link{get_haplotype_lut} to get a lookup table that maps
-#' a \code{epipredpreds} haplotype ID to an EpitopePrediction haplotype name
+#' a \code{epiprepreds} haplotype ID to an EpitopePrediction haplotype name
 #' @param ic50_threshold peptides with a predicted IC50 value (in nM)
 #'   lower than this will be considered binders.
 #'   A threshold of 500 (nM) is common.

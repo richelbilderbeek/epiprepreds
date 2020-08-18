@@ -29,9 +29,9 @@ peptide_length <- args[2]
 message("peptide_length: '", peptide_length, "'")
 haplotype_id <- args[3]
 message("haplotype_id: '", haplotype_id, "'")
-testthat::expect_true(haplotype_id %in% epipredpreds::get_haplotype_lut()$id)
+testthat::expect_true(haplotype_id %in% epiprepreds::get_haplotype_lut()$id)
 
-t_haplotype <- epipredpreds::get_haplotype_lut()
+t_haplotype <- epiprepreds::get_haplotype_lut()
 haplotype <- t_haplotype$haplotype[t_haplotype$id == haplotype_id]
 message("haplotype: ", haplotype)
 
@@ -61,7 +61,7 @@ library(EpitopePrediction)
 
 peptides <- replicate(
   n = n_peptides,
-  epipredpreds::create_random_peptide(length = peptide_length)
+  epiprepreds::create_random_peptide(length = peptide_length)
 )
 
 ic50s <- EpitopePrediction::smm(
@@ -70,6 +70,6 @@ ic50s <- EpitopePrediction::smm(
   output.IC50 = TRUE
 )
 
-q <- epipredpreds::convert_ic50s_to_quantiles(ic50s, n = n_quantiles)
+q <- epiprepreds::convert_ic50s_to_quantiles(ic50s, n = n_quantiles)
 
 readr::write_csv(q, target_filename)
