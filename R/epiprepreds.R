@@ -17,8 +17,8 @@
 #' # Get the IC50 value of which 2% of IC50 predictions are below,
 #' # that is, bind better to the MHC complexes
 #' ic50_threshold <- get_ic50_threshold(
-#'   peptide_length = "HLA-A-01:01",
-#'   mhc_haplotype = mhc_haplotype,
+#'   peptide_length = 9,
+#'   mhc_haplotype = "HLA-A-01:01",
 #'   percentile = 0.02
 #' )
 #'

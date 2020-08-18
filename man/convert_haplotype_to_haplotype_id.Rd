@@ -16,7 +16,7 @@ a \code{epiprepreds} haplotype ID to an EpitopePrediction haplotype name}
 Convert a haplotype (in EpitopePrediction naming format) to a hapolotype ID
 }
 \examples{
-convert_haplotype_to_haplotype_id("HLA-A33:01")
+convert_haplotype_to_haplotype_id("HLA-A-33:01")
 }
 \author{
 Richèl J.C. Bilderbeek

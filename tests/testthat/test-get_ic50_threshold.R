@@ -13,7 +13,7 @@ test_that("use", {
   expect_silent(
     get_ic50_threshold(
       peptide_length = 9,
-      mhc_haplotype = "HLA-A01:01",
+      mhc_haplotype = "HLA-A-01:01",
       percentile = 0.02
     )
   )
@@ -24,7 +24,7 @@ test_that("detailed use", {
   t <- readr::read_csv(
     get_lut_filename(
       peptide_length = 9,
-      mhc_haplotype = "HLA-A01:01"
+      mhc_haplotype = "HLA-A-01:01"
     )
   )
   lowest_ic50 <- min(t$ic50)
@@ -34,7 +34,7 @@ test_that("detailed use", {
   # 2%: closest to low
   ic50 <- get_ic50_threshold(
     peptide_length = 9,
-    mhc_haplotype = "HLA-A01:01",
+    mhc_haplotype = "HLA-A-01:01",
     percentile = 0.02
   )
   expect_true(ic50 < median_ic50)
@@ -42,7 +42,7 @@ test_that("detailed use", {
   # 98%: closest to high
   ic50 <- get_ic50_threshold(
     peptide_length = 9,
-    mhc_haplotype = "HLA-A01:01",
+    mhc_haplotype = "HLA-A-01:01",
     percentile = 0.98
   )
   expect_true(ic50 > median_ic50)
@@ -57,7 +57,7 @@ test_that("simulated peptides must be in LUT", {
   # Simulate n peptides, check if these are in range
   n <- 100
   peptide_length <- 9
-  haplotype <- "HLA-A01:01"
+  haplotype <- "HLA-A-01:01"
   peptides <- replicate(n = 100, create_random_peptide(peptide_length))
   mhcnuggets_options <- mhcnuggetsr::create_mhcnuggets_options(mhc = haplotype)
   ic50s <- mhcnuggetsr::predict_ic50(mhcnuggets_options, peptides)
