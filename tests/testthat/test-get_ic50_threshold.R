@@ -1,9 +1,13 @@
 test_that("use", {
 
+  sink("/dev/null")
+  supported_mhcs <- EpitopePrediction::supportedMHCs()
+  sink()
+
   expect_silent(
     get_lut_filename(
-      peptide_length = 9,
-      mhc_haplotype = "HLA-A01:01"
+      peptide_length = supported_mhcs$l[1],
+      mhc_haplotype = supported_mhcs$mhc[1]
     )
   )
   expect_silent(
