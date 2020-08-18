@@ -48,26 +48,40 @@ test_that("detailed use", {
   expect_true(ic50 > median_ic50)
 })
 
+test_that("IC50 versus LUT", {
+
+  return()
+
+  ggplot2::ggplot(
+    epiprepreds::get_lut(
+      peptide_length = 9,
+      mhc_haplotype = "HLA-A-01:01"
+    ),
+    ggplot2::aes(x = q, y = ic50)
+  ) + ggplot2::geom_point()
+})
+
 test_that("simulated peptides must be in LUT", {
 
   if (!mhcnuggetsr::is_on_ci()) return()
-  if (!mhcnuggetsr::is_mhcnuggets_installed()) return()
 
   set.seed(42)
   # Simulate n peptides, check if these are in range
-  n <- 100
+  n <- 10000
   peptide_length <- 9
   haplotype <- "HLA-A-01:01"
-  peptides <- replicate(n = 100, create_random_peptide(peptide_length))
-  mhcnuggets_options <- mhcnuggetsr::create_mhcnuggets_options(mhc = haplotype)
-  ic50s <- mhcnuggetsr::predict_ic50(mhcnuggets_options, peptides)
-
+  peptides <- replicate(n = n, create_random_peptide(peptide_length))
+  ic50s <- EpitopePrediction::smm(
+    x = peptides,
+    mhc = haplotype,
+    output.IC50 = TRUE
+  )
   min_ic50 <- epiprepreds::get_ic50_threshold(
     peptide_length = peptide_length,
     mhc_haplotype = haplotype,
     percentile = 0.0
   )
-  mean_ic50 <- epiprepreds::get_ic50_threshold(
+  median_ic50 <- epiprepreds::get_ic50_threshold(
     peptide_length = peptide_length,
     mhc_haplotype = haplotype,
     percentile = 0.5
@@ -78,9 +92,9 @@ test_that("simulated peptides must be in LUT", {
     percentile = 1.0
   )
   # All IC50s, are within the range
-  expect_equal(n, sum(min_ic50 < ic50s$ic50 & max_ic50 > ic50s$ic50))
+  expect_equal(n, sum(min_ic50 < ic50s & max_ic50 > ic50s))
 
   # Mean IC50s are similar
-  expect_true(mean(ic50s$ic50) > 0.99 * mean_ic50)
-  expect_true(mean(ic50s$ic50) < 1.01 * mean_ic50)
+  expect_true(median(ic50s) > 0.93 * median_ic50)
+  expect_true(median(ic50s) < 1.01 * median_ic50)
 })
