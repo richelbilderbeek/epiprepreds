@@ -6,6 +6,12 @@
 \usage{
 to_epipred_name(haplotype)
 }
+\arguments{
+\item{haplotype}{the EpitopePrediction haplotype ID,
+for example \code{HLA-A33:01}.
+Use \link{get_haplotype_lut} to get a lookup table that maps
+a \code{epiprepreds} haplotype ID to an EpitopePrediction haplotype name}
+}
 \description{
 Convert a formally named MHC-I haplotype
 to its EpitopePrediction counterpart.
