@@ -4,17 +4,14 @@
 \alias{get_ic50_threshold}
 \title{Look up the IC50 value of a certain quantile}
 \usage{
-get_ic50_threshold(peptide_length = 9, mhc_haplotype, percentile = 0.02)
+get_ic50_threshold(peptide_length = 9, haplotype_name, percentile = 0.02)
 }
 \arguments{
 \item{peptide_length}{length of the peptide in amino acids}
 
-\item{mhc_haplotype}{haplotype of either HMC-I or MHC-II.
-in EpitopePredictionr format.
-Use \code{EpitopePredictionr::get_mhc_1_haplotypes}
-to get a list of all MHC-I haplotypes.
-Use \code{EpitopePredictionr::get_mhc_2_haplotypes}
-to get a list of all MHC-II haplotypes.}
+\item{haplotype_name}{a formal haplotype name,
+Use \link{to_ep_haplotype_name} to convert this to an
+EpitopePrediction haplotype name}
 
 \item{percentile}{the IC50 percentile. The IC50 that separates the top
 \code{percentile} from the worse binders}

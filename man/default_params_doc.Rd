@@ -7,8 +7,11 @@ documentation.}
 \usage{
 default_params_doc(
   binding_strength_threshold,
+  ep_haplotype_name,
+  ep_haplotype_names,
   fasta_filename,
   haplotype,
+  haplotype_name,
   haplotypes,
   haplotype_id,
   haplotype_ids,
@@ -28,12 +31,26 @@ default_params_doc(
 binding strength. A low threshold, e.g. \code{5.0}, selects for the top
 5 percent best binders}
 
+\item{ep_haplotype_name}{a haplotype name as used internally
+by EpitopePrediction,
+Use \link{to_ep_haplotype_name} to convert a formal haplotype
+name to an EpitopePrediction haplotype name}
+
+\item{ep_haplotype_names}{one or more haplotype name
+as used internelly by EpitopePrediction,
+Use \link{to_ep_haplotype_name} to convert a formal haplotype
+name to an EpitopePrediction haplotype name}
+
 \item{fasta_filename}{name of a FASTA file}
 
-\item{haplotype}{the EpitopePrediction haplotype ID,
+\item{haplotype}{the EpitopePrediction haplotype name,
 for example \code{HLA-A33:01}.
 Use \link{get_haplotype_lut} to get a lookup table that maps
 a \code{epiprepreds} haplotype ID to an EpitopePrediction haplotype name}
+
+\item{haplotype_name}{a formal haplotype name,
+Use \link{to_ep_haplotype_name} to convert this to an
+EpitopePrediction haplotype name}
 
 \item{haplotypes}{one ore more EpitopePrediction haplotype IDs,
 for example \code{HLA-A33:01}.

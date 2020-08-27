@@ -1,7 +1,7 @@
-#' Convert haplotype IDs to haplotypes
+#' Internal function
 #'
-#' Convert one or more haplotype IDs to haplotypes,
-#' in EpitopePrediction naming format
+#' Internal function to convert one or more haplotype IDs
+#' to EpitopePrediction haplotype names
 #' @inheritParams default_params_doc
 #' @author Richèl J.C. Bilderbeek
 #' @examples

@@ -2,7 +2,7 @@
 % Please edit documentation in R/convert_haplotype_id_to_haplotype.R
 \name{convert_haplotype_id_to_haplotype}
 \alias{convert_haplotype_id_to_haplotype}
-\title{Convert a haplotype ID to a haplotype}
+\title{Internal function}
 \usage{
 convert_haplotype_id_to_haplotype(haplotype_id)
 }
@@ -13,8 +13,8 @@ Use \link{get_haplotype_lut} to get a lookup table that maps
 a \code{epiprepreds} haplotype ID to an EpitopePrediction haplotype name}
 }
 \description{
-Convert a haplotype ID to a hapolotype,
-in EpitopePrediction naming format
+Internal function to convert a haplotype ID
+to an EpitopePrediction hapolotype name
 }
 \examples{
 convert_haplotype_id_to_haplotype("h13")

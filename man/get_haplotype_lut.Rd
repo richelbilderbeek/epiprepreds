@@ -2,10 +2,14 @@
 % Please edit documentation in R/get_haplotype_lut.R
 \name{get_haplotype_lut}
 \alias{get_haplotype_lut}
-\title{The mapping from an EpitopePrediction name to an ID}
+\title{Internal function}
 \usage{
 get_haplotype_lut()
 }
 \description{
-The mapping from an EpitopePrediction name to an ID
+Create the mapping from the EpitopePrediction haplotype names
+to a haplotype ID
+}
+\examples{
+get_haplotype_lut()
 }

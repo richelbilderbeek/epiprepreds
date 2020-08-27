@@ -6,11 +6,12 @@
 #' @export
 get_lut <- function(
   peptide_length,
-  mhc_haplotype
+  ep_haplotype_name
 ) {
+  epiprepreds::check_ep_haplotype_name(ep_haplotype_name)
   filename <- epiprepreds::get_lut_filename(
     peptide_length = peptide_length,
-    mhc_haplotype = mhc_haplotype
+    ep_haplotype_name = ep_haplotype_name
   )
   readr::read_csv(
     filename,

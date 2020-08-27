@@ -25,7 +25,7 @@ and the distribution at the percentile level is stored as a lookup table.
 # that is, bind better to the MHC complexes
 ic50_threshold <- get_ic50_threshold(
   peptide_length = 9,
-  mhc_haplotype = "HLA-A-01:01",
+  haplotype_name = "HLA-A*01:01",
   percentile = 0.02
 )
 

@@ -1,22 +1,22 @@
-#' Get the filename for a lookup-table
+#' Internal function
 #'
-#' Get the filename for a lookup-table for a specific
-#' peptide size and haplotype.
+#' Internal function to get the filename for a lookup-table
+#' for a specific peptide size and EpitopePrediction haplotype.
 #' @inheritParams default_params_doc
 #' @export
 get_lut_filename <- function(
   peptide_length,
-  mhc_haplotype
+  ep_haplotype_name
 ) {
   haplotype_lut <- epiprepreds::get_haplotype_lut()
 
-  if (!mhc_haplotype %in% haplotype_lut$haplotype) {
+  if (!ep_haplotype_name %in% haplotype_lut$haplotype) {
     stop(
-      "'mhc_haplotype' not in lookup table. ",
-      "'mhc_haplotype': ", mhc_haplotype
+      "'ep_haplotype_name' not in lookup table. ",
+      "'ep_haplotype_name': ", ep_haplotype_name
     )
   }
-  haplotype_id <- haplotype_lut$id[mhc_haplotype == haplotype_lut$haplotype]
+  haplotype_id <- haplotype_lut$id[ep_haplotype_name == haplotype_lut$haplotype]
   filename <- paste0("random_", haplotype_id, "_", peptide_length, ".csv")
   full <- system.file("extdata", filename, package = "epiprepreds")
   if (!file.exists(full)) {
@@ -24,7 +24,7 @@ get_lut_filename <- function(
       glue::glue(
         "No lookup table found for the desired peptide length. \n",
         "'peptide_length': {peptide_length} \n",
-        "'mhc_haplotype':  '{mhc_haplotype}' \n",
+        "'ep_haplotype_name':  '{ep_haplotype_name}' \n",
         "'filename': '{filename}'"
       )
     )

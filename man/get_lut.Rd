@@ -4,17 +4,15 @@
 \alias{get_lut}
 \title{Get the lookup-table}
 \usage{
-get_lut(peptide_length, mhc_haplotype)
+get_lut(peptide_length, ep_haplotype_name)
 }
 \arguments{
 \item{peptide_length}{length of the peptide in amino acids}
 
-\item{mhc_haplotype}{haplotype of either HMC-I or MHC-II.
-in EpitopePredictionr format.
-Use \code{EpitopePredictionr::get_mhc_1_haplotypes}
-to get a list of all MHC-I haplotypes.
-Use \code{EpitopePredictionr::get_mhc_2_haplotypes}
-to get a list of all MHC-II haplotypes.}
+\item{ep_haplotype_name}{a haplotype name as used internally
+by EpitopePrediction,
+Use \link{to_ep_haplotype_name} to convert a formal haplotype
+name to an EpitopePrediction haplotype name}
 }
 \description{
 Get the lookup-table for a specific

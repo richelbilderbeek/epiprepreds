@@ -1,15 +1,13 @@
-#' The mapping from an EpitopePrediction name to an ID
+#' Internal function
+#'
+#' Create the mapping from the EpitopePrediction haplotype names
+#' to a haplotype ID
+#' @examples
+#' get_haplotype_lut()
 #' @export
 get_haplotype_lut <- function() {
-  # EpitopePrediction::supportedMHCs prints output
-  # Pull Request to fix this is sent in May 2020 at
-  # https://github.com/jtextor/epitope-prediction/pull/1
-  sink("/dev/null")
-  mhcs <- EpitopePrediction::supportedMHCs()$mhc
-  sink()
-
   t <- tibble::tibble(
-    haplotype = sort(unique(as.character(mhcs))),
+    haplotype = epiprepreds::get_ep_haplotype_names(),
     id = NA
   )
   t$id <- paste0("h", seq(1, nrow(t)))

@@ -2,7 +2,7 @@
 % Please edit documentation in R/convert_ic50s_to_quantiles.R
 \name{convert_ic50s_to_quantiles}
 \alias{convert_ic50s_to_quantiles}
-\title{Convert IC50s to a quantile table}
+\title{Internal function}
 \usage{
 convert_ic50s_to_quantiles(ic50s, n = 100)
 }
@@ -17,5 +17,8 @@ a tibble with two columns: \code{q} the quantiles,
 and \code{ic50} the IC50s
 }
 \description{
-Convert IC50s to a quantile table
+Internal function to convert IC50s to a quantile table
+}
+\author{
+Richèl J.C. Bilderbeek
 }

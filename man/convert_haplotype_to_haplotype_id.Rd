@@ -2,18 +2,19 @@
 % Please edit documentation in R/convert_haplotype_to_haplotype_id.R
 \name{convert_haplotype_to_haplotype_id}
 \alias{convert_haplotype_to_haplotype_id}
-\title{Convert a haplotype to a haplotype ID}
+\title{Internal function}
 \usage{
-convert_haplotype_to_haplotype_id(haplotype)
+convert_haplotype_to_haplotype_id(ep_haplotype_name)
 }
 \arguments{
-\item{haplotype}{the EpitopePrediction haplotype ID,
-for example \code{HLA-A33:01}.
-Use \link{get_haplotype_lut} to get a lookup table that maps
-a \code{epiprepreds} haplotype ID to an EpitopePrediction haplotype name}
+\item{ep_haplotype_name}{a haplotype name as used internally
+by EpitopePrediction,
+Use \link{to_ep_haplotype_name} to convert a formal haplotype
+name to an EpitopePrediction haplotype name}
 }
 \description{
-Convert a haplotype (in EpitopePrediction naming format) to a hapolotype ID
+Internal function to convert an EpitopePrediction haplotype name
+to a hapolotype ID
 }
 \examples{
 convert_haplotype_to_haplotype_id("HLA-A-33:01")

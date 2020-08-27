@@ -1,19 +1,10 @@
-#' Convert a quantile to an IC50
+#' Internal function
+#'
+#' Internal function to convert a quantile to an IC50
 #' @param lut lookup table
 #' @param q the quantile
 #' @export
 convert_quantile_to_ic50 <- function(
-  lut,
-  q
-) {
-  epiprepreds::convert_quantile_to_ic50_old(lut = lut, q = q)
-}
-
-#' Convert a quantile to an IC50, olskool
-#' @param lut lookup table
-#' @param q the quantile
-#' @export
-convert_quantile_to_ic50_old <- function(
   lut,
   q
 ) {
@@ -39,15 +30,4 @@ convert_quantile_to_ic50_old <- function(
   d <- ic50_above - ic50_below
 
   ic50_below + (f * d)
-}
-
-#' Convert a quantile to an IC50, new school
-#' @param lut lookup table
-#' @param q the quantile
-#' @export
-convert_quantile_to_ic50_new <- function(
-  lut,
-  q
-) {
-  epiprepreds::convert_quantile_to_ic50_old(lut = lut, q = q)
 }

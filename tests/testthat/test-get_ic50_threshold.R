@@ -1,19 +1,8 @@
 test_that("use", {
-
-  sink("/dev/null")
-  supported_mhcs <- EpitopePrediction::supportedMHCs()
-  sink()
-
-  expect_silent(
-    get_lut_filename(
-      peptide_length = supported_mhcs$l[1],
-      mhc_haplotype = supported_mhcs$mhc[1]
-    )
-  )
   expect_silent(
     get_ic50_threshold(
       peptide_length = 9,
-      mhc_haplotype = "HLA-A-01:01",
+      haplotype_name = "HLA-A-01:01",
       percentile = 0.02
     )
   )
@@ -21,10 +10,13 @@ test_that("use", {
 
 test_that("detailed use", {
 
+  haplotype_name = "HLA-A-01:01"
+  ep_haplotype_name = to_ep_haplotype_name(haplotype_name)
+
   t <- readr::read_csv(
     get_lut_filename(
       peptide_length = 9,
-      mhc_haplotype = "HLA-A-01:01"
+      ep_haplotype_name = ep_haplotype_name
     )
   )
   lowest_ic50 <- min(t$ic50)
@@ -34,7 +26,7 @@ test_that("detailed use", {
   # 2%: closest to low
   ic50 <- get_ic50_threshold(
     peptide_length = 9,
-    mhc_haplotype = "HLA-A-01:01",
+    haplotype_name = haplotype_name,
     percentile = 0.02
   )
   expect_true(ic50 < median_ic50)
@@ -42,7 +34,7 @@ test_that("detailed use", {
   # 98%: closest to high
   ic50 <- get_ic50_threshold(
     peptide_length = 9,
-    mhc_haplotype = "HLA-A-01:01",
+    haplotype_name = haplotype_name,
     percentile = 0.98
   )
   expect_true(ic50 > median_ic50)
@@ -55,7 +47,7 @@ test_that("IC50 versus LUT", {
   ggplot2::ggplot(
     epiprepreds::get_lut(
       peptide_length = 9,
-      mhc_haplotype = "HLA-A-01:01"
+      ep_haplotype_name = "HLA-A-01:01"
     ),
     ggplot2::aes(x = q, y = ic50)
   ) + ggplot2::geom_point()
@@ -69,26 +61,28 @@ test_that("simulated peptides must be in LUT", {
   # Simulate n peptides, check if these are in range
   n <- 10000
   peptide_length <- 9
-  haplotype <- "HLA-A-01:01"
+  haplotype_name = "HLA-A-01:01"
+  ep_haplotype_name = to_ep_haplotype_name(haplotype_name)
   peptides <- replicate(n = n, create_random_peptide(peptide_length))
+
   ic50s <- EpitopePrediction::smm(
     x = peptides,
-    mhc = haplotype,
+    mhc = ep_haplotype_name,
     output.IC50 = TRUE
   )
   min_ic50 <- epiprepreds::get_ic50_threshold(
     peptide_length = peptide_length,
-    mhc_haplotype = haplotype,
+    haplotype_name = haplotype_name,
     percentile = 0.0
   )
   median_ic50 <- epiprepreds::get_ic50_threshold(
     peptide_length = peptide_length,
-    mhc_haplotype = haplotype,
+    haplotype_name = haplotype_name,
     percentile = 0.5
   )
   max_ic50 <- epiprepreds::get_ic50_threshold(
     peptide_length = peptide_length,
-    mhc_haplotype = haplotype,
+    haplotype_name = haplotype_name,
     percentile = 1.0
   )
   # All IC50s, are within the range

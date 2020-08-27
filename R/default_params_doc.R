@@ -3,11 +3,22 @@
 #' @param binding_strength_threshold threshold of the MHC2 allele's
 #'   binding strength. A low threshold, e.g. \code{5.0}, selects for the top
 #'   5 percent best binders
+#' @param ep_haplotype_name a haplotype name as used internally
+#' by EpitopePrediction,
+#' Use \link{to_ep_haplotype_name} to convert a formal haplotype
+#' name to an EpitopePrediction haplotype name
+#' @param ep_haplotype_names one or more haplotype name
+#' as used internelly by EpitopePrediction,
+#' Use \link{to_ep_haplotype_name} to convert a formal haplotype
+#' name to an EpitopePrediction haplotype name
 #' @param fasta_filename name of a FASTA file
-#' @param haplotype the EpitopePrediction haplotype ID,
+#' @param haplotype the EpitopePrediction haplotype name,
 #' for example \code{HLA-A33:01}.
 #' Use \link{get_haplotype_lut} to get a lookup table that maps
 #' a \code{epiprepreds} haplotype ID to an EpitopePrediction haplotype name
+#' @param haplotype_name a formal haplotype name,
+#' Use \link{to_ep_haplotype_name} to convert this to an
+#' EpitopePrediction haplotype name
 #' @param haplotypes one ore more EpitopePrediction haplotype IDs,
 #' for example \code{HLA-A33:01}.
 #' Use \link{get_haplotype_lut} to get a lookup table that maps
@@ -42,8 +53,11 @@
 #'   functions to find the documentation parameters
 default_params_doc <- function(
   binding_strength_threshold,
+  ep_haplotype_name,
+  ep_haplotype_names,
   fasta_filename,
   haplotype,
+  haplotype_name,
   haplotypes,
   haplotype_id,
   haplotype_ids,

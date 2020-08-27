@@ -2,7 +2,7 @@
 % Please edit documentation in R/convert_quantile_to_ic50.R
 \name{convert_quantile_to_ic50}
 \alias{convert_quantile_to_ic50}
-\title{Convert a quantile to an IC50}
+\title{Internal function}
 \usage{
 convert_quantile_to_ic50(lut, q)
 }
@@ -12,5 +12,5 @@ convert_quantile_to_ic50(lut, q)
 \item{q}{the quantile}
 }
 \description{
-Convert a quantile to an IC50
+Internal function to convert a quantile to an IC50
 }

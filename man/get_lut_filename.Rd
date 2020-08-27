@@ -2,21 +2,19 @@
 % Please edit documentation in R/get_lut_filename.R
 \name{get_lut_filename}
 \alias{get_lut_filename}
-\title{Get the filename for a lookup-table}
+\title{Internal function}
 \usage{
-get_lut_filename(peptide_length, mhc_haplotype)
+get_lut_filename(peptide_length, ep_haplotype_name)
 }
 \arguments{
 \item{peptide_length}{length of the peptide in amino acids}
 
-\item{mhc_haplotype}{haplotype of either HMC-I or MHC-II.
-in EpitopePredictionr format.
-Use \code{EpitopePredictionr::get_mhc_1_haplotypes}
-to get a list of all MHC-I haplotypes.
-Use \code{EpitopePredictionr::get_mhc_2_haplotypes}
-to get a list of all MHC-II haplotypes.}
+\item{ep_haplotype_name}{a haplotype name as used internally
+by EpitopePrediction,
+Use \link{to_ep_haplotype_name} to convert a formal haplotype
+name to an EpitopePrediction haplotype name}
 }
 \description{
-Get the filename for a lookup-table for a specific
-peptide size and haplotype.
+Internal function to get the filename for a lookup-table
+for a specific peptide size and EpitopePrediction haplotype.
 }
