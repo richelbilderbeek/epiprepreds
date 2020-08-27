@@ -10,6 +10,7 @@ predict_ic50s <- function(
   epiprepreds::check_haplotype_name(haplotype_name)
   ep_haplotype_name <- to_ep_haplotype_name(haplotype_name)
   epiprepreds::check_ep_haplotype_name(ep_haplotype_name)
+  epiprepreds::check_protein_sequence(protein_sequence)
 
   peptides <- epiprepreds::shred_protein(
     protein_sequence = protein_sequence,
