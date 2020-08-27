@@ -40,12 +40,11 @@ supported_mhcs <- EpitopePrediction::supportedMHCs()
 sink()
 
 if (nrow(supported_mhcs[supported_mhcs$mhc == haplotype & supported_mhcs$l == peptide_length, ]) == 0) {
-  message(
+  stop(
     "Combination of haplotype '", haplotype, "' ",
     "and peptide length '", peptide_length, "' ",
     "not supported by EpitopePrediction"
   )
-  q()
 }
 
 target_filename <- paste0(peptide_source, "_", haplotype_id, "_", peptide_length, ".csv")
