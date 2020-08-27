@@ -10,7 +10,7 @@
 is_protein_sequence <- function(protein_sequence) {
   is_valid <- FALSE
   tryCatch({
-    check_protein_sequence(protein_sequence)
+    epiprepreds::check_protein_sequence(protein_sequence)
     is_valid <- TRUE
   }, error = function(e) {} # nolint ignore error message
   )

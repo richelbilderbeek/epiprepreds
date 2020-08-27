@@ -10,8 +10,8 @@ test_that("use", {
 
 test_that("detailed use", {
 
-  haplotype_name = "HLA-A-01:01"
-  ep_haplotype_name = to_ep_haplotype_name(haplotype_name)
+  haplotype_name <- "HLA-A-01:01"
+  ep_haplotype_name <- to_ep_haplotype_name(haplotype_name)
 
   t <- readr::read_csv(
     get_lut_filename(
@@ -61,8 +61,8 @@ test_that("simulated peptides must be in LUT", {
   # Simulate n peptides, check if these are in range
   n <- 10000
   peptide_length <- 9
-  haplotype_name = "HLA-A-01:01"
-  ep_haplotype_name = to_ep_haplotype_name(haplotype_name)
+  haplotype_name <- "HLA-A-01:01"
+  ep_haplotype_name <- to_ep_haplotype_name(haplotype_name)
   peptides <- replicate(n = n, create_random_peptide(peptide_length))
 
   ic50s <- EpitopePrediction::smm(

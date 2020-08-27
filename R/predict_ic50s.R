@@ -8,7 +8,7 @@ predict_ic50s <- function(
   haplotype_name
 ) {
   epiprepreds::check_haplotype_name(haplotype_name)
-  ep_haplotype_name <- to_ep_haplotype_name(haplotype_name)
+  ep_haplotype_name <- epiprepreds::to_ep_haplotype_name(haplotype_name)
   epiprepreds::check_ep_haplotype_name(ep_haplotype_name)
   epiprepreds::check_protein_sequence(protein_sequence)
 
@@ -42,4 +42,3 @@ predict_ic50s <- function(
   )
   ic50s
 }
-
