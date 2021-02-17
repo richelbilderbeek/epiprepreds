@@ -12,8 +12,8 @@ check_haplotype_name <- function(
 ) {
   epiprepreds::check_ep_haplotype_name(
     epiprepreds::to_ep_haplotype_name(
-      haplotype_name,
-      sink_filename = sink_filename
-    )
+      haplotype_name
+    ),
+    sink_filename = sink_filename
   )
 }

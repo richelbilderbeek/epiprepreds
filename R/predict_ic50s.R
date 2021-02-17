@@ -5,7 +5,8 @@
 #' predict_ic50s(
 #'   protein_sequence = "FANTASTICFAMILYVW",
 #'   peptide_length = 9,
-#'   haplotype_name = "HLA-A*01:01"
+#'   haplotype_name = "HLA-A*01:01",
+#'   sink_filename = "/dev/null"
 #' )
 #' @export
 predict_ic50s <- function(
