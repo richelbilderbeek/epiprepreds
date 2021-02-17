@@ -4,13 +4,16 @@
 \alias{check_ep_haplotype_name}
 \title{Internal function}
 \usage{
-check_ep_haplotype_name(ep_haplotype_name)
+check_ep_haplotype_name(ep_haplotype_name, sink_filename = "/dev/null")
 }
 \arguments{
 \item{ep_haplotype_name}{a haplotype name as used internally
 by EpitopePrediction,
 Use \link{to_ep_haplotype_name} to convert a formal haplotype
 name to an EpitopePrediction haplotype name}
+
+\item{sink_filename}{temporary filename to \link{sink} output to.
+This is \code{/dev/null} by default, which works on Linux perfectly}
 }
 \description{
 Internal function to check if the EpitopePrediction name is valid.

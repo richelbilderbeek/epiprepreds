@@ -4,12 +4,15 @@
 \alias{check_haplotype_name}
 \title{Check if the haplotype name is valid and supported}
 \usage{
-check_haplotype_name(haplotype_name)
+check_haplotype_name(haplotype_name, sink_filename = "/dev/null")
 }
 \arguments{
 \item{haplotype_name}{a formal haplotype name,
 Use \link{to_ep_haplotype_name} to convert this to an
 EpitopePrediction haplotype name}
+
+\item{sink_filename}{temporary filename to \link{sink} output to.
+This is \code{/dev/null} by default, which works on Linux perfectly}
 }
 \description{
 Check if the haplotype name is valid and supported
