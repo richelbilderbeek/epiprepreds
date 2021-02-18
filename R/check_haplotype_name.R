@@ -7,13 +7,11 @@
 #' @author Richèl J.C. Bilderbeek
 #' @export
 check_haplotype_name <- function(
-  haplotype_name,
-  sink_filename = "/dev/null"
+  haplotype_name
 ) {
   epiprepreds::check_ep_haplotype_name(
     epiprepreds::to_ep_haplotype_name(
       haplotype_name
-    ),
-    sink_filename = sink_filename
+    )
   )
 }

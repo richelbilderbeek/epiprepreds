@@ -4,11 +4,7 @@
 \alias{get_ep_haplotype_names}
 \title{Get the EpitopePrediction haplotype names}
 \usage{
-get_ep_haplotype_names(sink_filename = "/dev/null")
-}
-\arguments{
-\item{sink_filename}{temporary filename to \link{sink} output to.
-This is \code{/dev/null} by default, which works on Linux perfectly}
+get_ep_haplotype_names()
 }
 \description{
 Get the EpitopePrediction haplotype names

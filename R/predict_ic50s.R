@@ -5,25 +5,17 @@
 #' predict_ic50s(
 #'   protein_sequence = "FANTASTICFAMILYVW",
 #'   peptide_length = 9,
-#'   haplotype_name = "HLA-A*01:01",
-#'   sink_filename = "/dev/null"
+#'   haplotype_name = "HLA-A*01:01"
 #' )
 #' @export
 predict_ic50s <- function(
   protein_sequence,
   peptide_length,
-  haplotype_name,
-  sink_filename = "/dev/null"
+  haplotype_name
 ) {
-  epiprepreds::check_haplotype_name(
-    haplotype_name,
-    sink_filename = sink_filename
-  )
+  epiprepreds::check_haplotype_name(haplotype_name)
   ep_haplotype_name <- epiprepreds::to_ep_haplotype_name(haplotype_name)
-  epiprepreds::check_ep_haplotype_name(
-    ep_haplotype_name,
-    sink_filename = sink_filename
-  )
+  epiprepreds::check_ep_haplotype_name(ep_haplotype_name)
   epiprepreds::check_protein_sequence(protein_sequence)
 
   peptides <- epiprepreds::shred_protein(

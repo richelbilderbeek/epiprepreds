@@ -1,7 +1,5 @@
 test_that("use", {
-  sink("/dev/null")
   supported_mhcs <- EpitopePrediction::supportedMHCs()
-  sink()
 
   haplotypes <- sort(unique(as.character(supported_mhcs$mhc)))
   t <- get_haplotype_lut()

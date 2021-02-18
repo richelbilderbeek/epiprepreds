@@ -46,8 +46,6 @@
 #' @param peptide_length length of the peptide in amino acids
 #' @param protein_sequence a protein sequence
 #' @param protein_sequences one or more protein sequences
-#' @param sink_filename temporary filename to \link{sink} output to.
-#'   This is \code{/dev/null} by default, which works on Linux perfectly
 #' @param verbose set to TRUE for more output
 #' @author Richèl J.C. Bilderbeek
 #' @note This is an internal function, so it should be marked with
@@ -71,7 +69,6 @@ default_params_doc <- function(
   peptide_length,
   protein_sequence,
   protein_sequences,
-  sink_filename,
   verbose
 ) {
   # Nothing

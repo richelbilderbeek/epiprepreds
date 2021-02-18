@@ -6,12 +6,9 @@
 #' @author Richèl J.C. Bilderbeek
 #' @export
 check_ep_haplotype_name <- function(
-  ep_haplotype_name,
-  sink_filename = "/dev/null"
+  ep_haplotype_name
 ) {
-  if (!ep_haplotype_name %in% epiprepreds::get_ep_haplotype_names(
-    sink_filename = sink_filename
-  )) {
+  if (!ep_haplotype_name %in% epiprepreds::get_ep_haplotype_names()) {
     stop(
       "'ep_haplotype_name' is not a valid EpitopePrediction haplotype name. \n",
       "'ep_haplotype_name': ", ep_haplotype_name, " \n",

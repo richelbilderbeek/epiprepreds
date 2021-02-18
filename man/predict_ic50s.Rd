@@ -4,12 +4,7 @@
 \alias{predict_ic50s}
 \title{Predict IC50s}
 \usage{
-predict_ic50s(
-  protein_sequence,
-  peptide_length,
-  haplotype_name,
-  sink_filename = "/dev/null"
-)
+predict_ic50s(protein_sequence, peptide_length, haplotype_name)
 }
 \arguments{
 \item{protein_sequence}{a protein sequence}
@@ -19,9 +14,6 @@ predict_ic50s(
 \item{haplotype_name}{a formal haplotype name,
 Use \link{to_ep_haplotype_name} to convert this to an
 EpitopePrediction haplotype name}
-
-\item{sink_filename}{temporary filename to \link{sink} output to.
-This is \code{/dev/null} by default, which works on Linux perfectly}
 }
 \description{
 Predict IC50s
@@ -30,8 +22,7 @@ Predict IC50s
 predict_ic50s(
   protein_sequence = "FANTASTICFAMILYVW",
   peptide_length = 9,
-  haplotype_name = "HLA-A*01:01",
-  sink_filename = "/dev/null"
+  haplotype_name = "HLA-A*01:01"
 )
 }
 \author{

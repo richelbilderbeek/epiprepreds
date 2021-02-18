@@ -35,9 +35,7 @@ t_haplotype <- epiprepreds::get_haplotype_lut()
 haplotype <- t_haplotype$haplotype[t_haplotype$id == haplotype_id]
 message("haplotype: ", haplotype)
 
-sink("/dev/null")
 supported_mhcs <- EpitopePrediction::supportedMHCs()
-sink()
 
 if (nrow(supported_mhcs[supported_mhcs$mhc == haplotype & supported_mhcs$l == peptide_length, ]) == 0) {
   stop(

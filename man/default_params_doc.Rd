@@ -23,7 +23,6 @@ default_params_doc(
   peptide_length,
   protein_sequence,
   protein_sequences,
-  sink_filename,
   verbose
 )
 }
@@ -90,9 +89,6 @@ to get a list of all MHC-II haplotypes.}
 \item{protein_sequence}{a protein sequence}
 
 \item{protein_sequences}{one or more protein sequences}
-
-\item{sink_filename}{temporary filename to \link{sink} output to.
-This is \code{/dev/null} by default, which works on Linux perfectly}
 
 \item{verbose}{set to TRUE for more output}
 }
